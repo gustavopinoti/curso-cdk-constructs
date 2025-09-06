@@ -22,8 +22,8 @@ cat > .npmrc <<EOL
 registry=https://registry.npmjs.org/
 
 ${SCOPE}:registry=${CODEARTIFACT_REPO_URL}
-
-//${CODEARTIFACT_URL_BASE}/npm/${REPOSITORY}/:_authToken=${NPM_TOKEN}
+//${DOMAIN}-${ACCOUNT_ID}.d.codeartifact.${REGION}.amazonaws.com/npm/${REPOSITORY}/:always-auth=true
+//${DOMAIN}-${ACCOUNT_ID}.d.codeartifact.${REGION}.amazonaws.com/npm/${REPOSITORY}/:_authToken=${NPM_TOKEN}
 EOL
 
 echo "Arquivo .npmrc criado com sucesso!"
